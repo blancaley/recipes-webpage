@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+    <title>Easy and Delicious Recipes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="header">
     <nav class="main-nav">
-        <div class="logo"><a href="#"><img src="https://placeholderlogo.com/img/placeholder-logo-1.png"></a></div>
+        <div class="logo"><a href="#"><img alt="Logo" src="https://placeholderlogo.com/img/placeholder-logo-1.png"></a></div>
         <ul class="nav-recipes">
             <li>Recipe 1</li>
             <li>Recipe 2</li>
@@ -18,61 +18,67 @@
         </ul>
     </nav>
 </header>
-<h1>All recipes</h1>
-    <main class="main">
-        <article>
-            <h2>Recipe title</h2>
-            <section class="general-info">
-                <h3>General info</h3>
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde, aut soluta repudiandae sunt dolores et minima hic tempora totam mollitia ab temporibus eius explicabo numquam suscipit vero adipisci nobis.</p>
-                <section class="recipe-info-section">
-                    <h4>Recipe Summary</h4>
-                </section>
-                <aside class="fun-fact">
-                    <h4>Fun Fact</h4>
-                </aside>
-            </section>
-            <section class="recipe">
-                <h3>Main Recipe</h3>
-                <h4>Ingredienser</h3>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                <h4>Instruktioner</h3>
-                    <ol>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-            </section>
-            <article>
-                <h3>Liknande recept</h3>
-                <article>
-                    <a href="" target="_blank">
-                        <h4>Recipe 1</h4>
-                        <img src="" alt="">
-                    </a>
-                </article>
-                <article>
-                    <a href="" target="_blank">
-                        <h4>Recipe 2</h4>
-                        <img src="" alt="">
-                    </a>
-                </article>
-                <article>
-                    <a href="" target="_blank">
-                        <h4>Recipe 3</h4>
-                        <img src="" alt="">
-                    </a>
-                </article>
-            </article>
-        </article>
-    </main>
+	<main class="main">
+		<h1 class="screenreader-only">Easy and Delicious Recipes</h1>
+			<article class="recipe-container">
+					<h2>Recipe title</h2>
+					<section class="recipe-intro">
+							<h3 class="screenreader-only">Recipe Introduction</h3>
+							<div class="recipe-main-img">
+								<img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929" alt="">
+							</div>
+							<div class="recipe-info">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde, aut soluta repudiandae sunt dolores et minima hic tempora totam mollitia ab temporibus eius explicabo numquam suscipit vero adipisci nobis.</p>
+								<div class="recipe-details">
+									<section class="recipe-info-section">
+											<h4>Recipe Summary</h4>
+									</section>
+									<aside class="fun-fact">
+											<h4>Fun Fact</h4>
+									</aside>
+								</div>
+							</div>
+					</section>
+					<section class="recipe-core">
+							<h3 class="screenreader-only">Main Recipe</h3>
+							<h4>Ingredienser</h4>
+									<ul>
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+									</ul>
+							<h4>Instruktioner</h4>
+									<ol>
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+									</ol>
+					</section>
+					<article class="related-recipes">
+							<h3>Liknande recept</h3>
+							<article>
+									<a href="" target="_blank">
+											<h4>Recipe 1</h4>
+											<img src="" alt="">
+									</a>
+							</article>
+							<article>
+									<a href="" target="_blank">
+											<h4>Recipe 2</h4>
+											<img src="" alt="">
+									</a>
+							</article>
+							<article>
+									<a href="" target="_blank">
+											<h4>Recipe 3</h4>
+											<img src="" alt="">
+									</a>
+							</article>
+					</article>
+			</article>
+	</main>
 </body>
 </html>

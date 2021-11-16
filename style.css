@@ -12,9 +12,36 @@ ol, ul {
   list-style: none;
 }
 
+/* Settings */
+.screenreader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Main Layout */
-.header {
+.header, .recipe-container {
   background: grey;
+  padding: 20px;
+}
+
+.recipe-intro, .recipe-core, .related-recipes {
+  background: pink;
+  display: flex;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.recipe-details {
+  display: flex;
 }
 
 /* Navbar */
@@ -28,4 +55,15 @@ ol, ul {
   display: flex;
   justify-content: center;
   flex-grow: 1;
+}
+
+/* Single recipe */
+.recipe-main-img {
+  /* width: 40%; */
+}
+
+.recipe-main-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
