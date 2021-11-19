@@ -1,5 +1,5 @@
 /* Reset */
-ol, ul, li, img {
+ol, ul, li, img, dd {
   margin: 0;
   padding: 0;
   border: 0;
@@ -31,17 +31,27 @@ ol, ul {
   padding: 20px;
 }
 
-.recipe-intro, .recipe-core, .related-recipes {
+.recipe-info, .recipe-core, .related-recipes {
   background: pink;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .header {
   margin-bottom: 30px;
 }
 
-.recipe-details {
+.recipe-info {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.recipe-container :last-child {
+  margin-bottom: 0;
+}
+
+.related-recipes {
+  display: block;
 }
 
 /* Navbar */
@@ -58,12 +68,49 @@ ol, ul {
 }
 
 /* Single recipe */
+
+.recipe-container h2 {
+  position: absolute;
+}
+
+.recipe-intro {
+  padding-top: 50px;
+  margin-right: 20px;
+}
+
 .recipe-main-img {
-  /* width: 40%; */
+  width: 100%;
+  height: 300px;
 }
 
 .recipe-main-img img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.ingredients {
+  flex: 1;
+}
+
+.instructions {
+  flex: 3;
+}
+
+.related-recipes-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.related-recipes-items li {
+  border: 1px solid rgba(0,0,0,.15);
+  margin-right: 24px;
+}
+
+.related-recipes-items :last-child {
+  margin-right: 0;
+}
+.related-recipes-items img {
+  object-fit: cover;
+  width: 100%;
 }
