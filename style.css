@@ -21,6 +21,10 @@ dd, dt {
 }
 
 /* Settings */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Merriweather";
   color: #404040;
@@ -43,10 +47,14 @@ h2, h3, h4, dt, .nav-recipes {
   border: 0;
 }
 
-/* Main Layout */
+/* General Layout */
 .recipe-container {
-  background: #fff8f3;
-  padding: 50px;
+  background: #fff1e7;
+  padding: 80px 50px;
+  margin-bottom: 60px;
+  scroll-margin-top: 56px;
+  scroll-behavior: smooth;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 9%);
 }
 
 .recipe-info, .recipe-core, .related-recipes {
@@ -55,7 +63,6 @@ h2, h3, h4, dt, .nav-recipes {
 }
 
 .header {
-  margin-bottom: 30px;
   padding: 0 20px;
 }
 
@@ -70,6 +77,12 @@ h2, h3, h4, dt, .nav-recipes {
 
 .related-recipes {
   display: block;
+}
+
+.footer {
+  height: 50vh;
+  padding: 60px;
+  position: relative;
 }
 
 /* Navbar */
@@ -90,7 +103,7 @@ h2, h3, h4, dt, .nav-recipes {
   position: sticky;
   top: 0;
   backdrop-filter: blur(14px);
-  background: rgb(255 144 0 / 53%);
+  background: rgb(219 124 0 / 64%);
   z-index: 1;
 }
 
@@ -166,6 +179,8 @@ h2, h3, h4, dt, .nav-recipes {
 /* Navbar - Elements Layer */
 .nav-recipes a {
   text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 /* Single recipe - Elements Layer */
@@ -203,6 +218,7 @@ h2, h3, h4, dt, .nav-recipes {
   padding: 15px;
   position: relative;
   height: 100%;
+  background: white;
 }
 
 .fun-fact p {
@@ -267,4 +283,54 @@ h3, h4 {
   font-size: 1.5rem;
   padding: 1rem;
   margin: 0;
+}
+
+#mexican h2::before {
+  content: "🇲🇽";
+  position: absolute;
+  left: 0;
+  top: -23px;
+  font-size: 20px;
+}
+
+#swedish h2::before {
+  content: "🇸🇪";
+  position: absolute;
+  left: 0;
+  top: -23px;
+  font-size: 20px;
+}
+
+#persian h2::before {
+  content: "🇮🇷";
+  position: absolute;
+  left: 0;
+  top: -23px;
+  font-size: 20px;
+}
+
+.related-recipes-items a {
+  color: #404040;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #f7eee6;
+  opacity: 0.2;
+  background-image:  linear-gradient(135deg, rgba(214,108,31,1) 25%, transparent 25%), linear-gradient(225deg, rgba(214,108,31,1) 25%, transparent 25%), linear-gradient(45deg, rgba(214,108,31,1) 25%, transparent 25%), linear-gradient(315deg, rgba(214,108,31,1) 25%, #f7eee6 25%);
+  background-position:  21px 0, 21px 0, 0 0, 0 0;
+  background-size: 21px 21px;
+  background-repeat: repeat;
+}
+.footer p {
+  text-align: center;
+  color: rgb(214, 108, 31);
+  font-family: 'Outfit';
+  position: relative;
+  font-size: 18px;
 }
