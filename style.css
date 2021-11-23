@@ -1,5 +1,5 @@
 /* Reset */
-ol, ul, li, img, dd {
+ol, ul, li, img, dd, dl {
   margin: 0;
   padding: 0;
   border: 0;
@@ -8,13 +8,23 @@ ol, ul, li, img, dd {
   vertical-align: baseline;
 }
 
+a {
+  text-decoration: none;
+}
+
 ol, ul {
   list-style: none;
+}
+
+dd, dt {
+  display: inline;
 }
 
 /* Settings */
 body {
   font-family: "Merriweather";
+  color: #404040;
+  margin: 0;
 }
 
 h2, h3, h4, dt, .nav-recipes {
@@ -34,27 +44,27 @@ h2, h3, h4, dt, .nav-recipes {
 }
 
 /* Main Layout */
-.header, .recipe-container {
-  background: grey;
-  padding: 20px;
+.recipe-container {
+  background: #fff8f3;
+  padding: 50px;
 }
 
 .recipe-info, .recipe-core, .related-recipes {
-  background: pink;
   display: flex;
   margin-bottom: 20px;
 }
 
 .header {
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
-.recipe-info {
+.recipe-details {
   display: flex;
   justify-content: space-evenly;
 }
 
-.recipe-container :last-child {
+.recipe-container:last-child {
   margin-bottom: 0;
 }
 
@@ -67,6 +77,7 @@ h2, h3, h4, dt, .nav-recipes {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 30px;
 }
 
 .nav-recipes {
@@ -75,20 +86,33 @@ h2, h3, h4, dt, .nav-recipes {
   flex-grow: 1;
 }
 
-/* Single recipe */
+.header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(14px);
+  background: rgb(255 144 0 / 53%);
+  z-index: 1;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Single recipe - Generic Layer*/
 
 .recipe-container h2 {
   position: absolute;
+  margin: 0 0 0 40px;
 }
 
-.recipe-intro {
-  padding-top: 50px;
+.recipe-intro, .recipe-core {
+  padding: 40px 40px 0;
   margin-right: 20px;
 }
 
 .recipe-main-img {
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 
 .recipe-main-img img {
@@ -98,11 +122,14 @@ h2, h3, h4, dt, .nav-recipes {
 }
 
 .recipe-details {
+  margin: 60px 0 0;
+}
+.recipe-facts {
   flex: 1;
 }
 
 .fun-fact {
-  flex: 2;
+  flex: 1;
 }
 
 .ingredients {
@@ -115,12 +142,16 @@ h2, h3, h4, dt, .nav-recipes {
 
 .related-recipes-items {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .related-recipes-items li {
-  border: 1px solid rgba(0,0,0,.15);
-  margin-right: 24px;
+  margin-right: 20px;
+  border-radius: 4px 4px 0 0;
+  flex-basis: 33.3333333333%;
+  max-width: 33.3333333333%;
+  background: white;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 6%);
 }
 
 .related-recipes-items :last-child {
@@ -129,4 +160,111 @@ h2, h3, h4, dt, .nav-recipes {
 .related-recipes-items img {
   object-fit: cover;
   width: 100%;
+  height: 240px;
+}
+
+/* Navbar - Elements Layer */
+.nav-recipes a {
+  text-transform: uppercase;
+}
+
+/* Single recipe - Elements Layer */
+
+.recipe-main-img img {
+  border-radius: 10px;
+}
+
+.recipe-container h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.recipe-intro p {
+  line-height: 1.8;
+}
+
+.recipe-facts dl > div {
+  padding-bottom: 18px;
+}
+
+.recipe-facts dt {
+  font-variant: all-small-caps;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.recipe-facts dd {
+  font-size: 12px;
+}
+
+.fun-fact {
+  border: 2px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  padding: 15px;
+  position: relative;
+  height: 100%;
+}
+
+.fun-fact p {
+  font-size: .9rem;
+  margin: 0;
+}
+
+.fun-fact-icon {
+  position: absolute;
+  top: -13px;
+  left: -19px;
+  font-size: 35px;
+}
+
+h3, h4 {
+  font-size: 27px;
+  line-height: 31px;
+  letter-spacing: -.25px;
+  margin: 0 0 27px;
+}
+
+.ingredients {
+  margin-right: 90px;
+}
+
+.ingredients li {
+  padding: 0 0 13px 0;
+}
+
+.instructions ol {
+  counter-reset: li;
+}
+.instructions li {
+  position: relative;
+  list-style: none;
+  padding: 0 0 23px 41px;
+  margin-top: 1.5em;
+  line-height: 1.5;
+}
+
+.instructions li::before {
+  content: counter(li);
+  counter-increment: li;
+  font-size: 1rem;
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1.2rem;
+  width: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #facb04;
+  padding: 0.2em;
+  background-color: #facb04;
+  color: #fff;
+}
+
+.related-recipes-items h4 {
+  font-weight: 100;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0;
 }
